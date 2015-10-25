@@ -1,0 +1,18 @@
+# behat.yml
+default:
+    autoload:
+        '': %paths.base%/tests/integration/context/
+    formatters:
+        pretty:
+            timer:      true
+            expand:     true
+            paths:      true
+            multiline:  true
+    suites:
+        default:
+            paths:
+                features: %paths.base%/tests/integration/features/
+                bootstrap: %paths.base%/tests/integration/context/
+            contexts:
+                - RestContext:
+                    base_url: "http://localhost:9876/"
